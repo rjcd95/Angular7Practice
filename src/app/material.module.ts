@@ -11,6 +11,7 @@ import {
     MatFormFieldModule,
     MatDatepickerModule,
     MatProgressBarModule,
+    MatSnackBarModule
 } from '@angular/material';
 
 import { MomentDateModule, MatMomentDateModule } from '@angular/material-moment-adapter';
@@ -24,7 +25,8 @@ import { MomentDateModule, MatMomentDateModule } from '@angular/material-moment-
         MomentDateModule,
         MatDatepickerModule,
         MatMomentDateModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatSnackBarModule
     ],
     exports: [
         MatButtonModule,
@@ -38,7 +40,8 @@ import { MomentDateModule, MatMomentDateModule } from '@angular/material-moment-
         MomentDateModule,
         MatDatepickerModule,
         MatMomentDateModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatSnackBarModule
     ]
 })
 
