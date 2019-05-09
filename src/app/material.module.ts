@@ -8,15 +8,21 @@ import {
     MatIconModule,
     MatToolbarModule,
     MatTableModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatDatepickerModule,
 } from '@angular/material';
+
+import { MomentDateModule, MatMomentDateModule } from '@angular/material-moment-adapter';
 
 @NgModule({
     imports: [
         MatButtonModule,
         MatCardModule,
         MatTableModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MomentDateModule,
+        MatDatepickerModule,
+        MatMomentDateModule
     ],
     exports: [
         MatButtonModule,
@@ -26,7 +32,10 @@ import {
         MatIconModule,
         MatToolbarModule,
         MatTableModule,
-        MatFormFieldModule
+        MatFormFieldModule,
+        MomentDateModule,
+        MatDatepickerModule,
+        MatMomentDateModule
     ]
 })
 
