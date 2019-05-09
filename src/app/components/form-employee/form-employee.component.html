@@ -1,0 +1,19 @@
+<mat-card style="height: 98%">
+  <div class="container">
+    <mat-form-field>
+      <input matInput placeholder="Nombre" [(ngModel)]="employee.employee_name">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Salario" [(ngModel)]="employee.employee_salary">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Edad" [(ngModel)]="employee.employee_age">
+    </mat-form-field>
+  </div>
+  <div class="button-row">
+    <button mat-raised-button color="primary" (click)="saveData()">Guardar</button>
+    <button mat-raised-button routerLink="/employees">Cancelar</button>
+  </div>
+</mat-card>
