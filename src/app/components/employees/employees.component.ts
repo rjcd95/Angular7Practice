@@ -9,6 +9,7 @@ import { Employee } from 'src/app/models/employee.model';
 })
 
 export class EmployeesComponent implements OnInit {
+    isLoading = true;
     employees: Employee[];
     displayedColumns: string[] = [
         "employee_name",
@@ -21,6 +22,7 @@ export class EmployeesComponent implements OnInit {
             .subscribe(data => {
                 this.employees = data;
                 this.displayedColumns = ['employee_name', 'employee_salary', 'employee_age', 'action'];
+                this.isLoading = false;
             });
     }
 

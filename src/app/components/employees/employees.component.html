@@ -1,4 +1,5 @@
-<mat-card style="height: 98%">
+<mat-progress-bar mode="query" *ngIf="isLoading"></mat-progress-bar>
+<mat-card style="height: 98%" *ngIf="!isLoading">
   <table mat-table [dataSource]="employees" class="mat-elevation-z8">
     <ng-container matColumnDef="employee_name">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>

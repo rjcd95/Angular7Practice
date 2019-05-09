@@ -10,14 +10,17 @@ import { EmployeeData } from 'src/app/models/employee-data.model';
 })
 
 export class FormEmployeeComponent implements OnInit {
+    isLoading = false;
     employee: any = {};
     id = null;
 
     ngOnInit() {
         if (this.id != 'new') {
+            this.isLoading = true;
             this.apiService.getEmployee(this.id)
                 .subscribe(data => {
                     this.employee = data;
+                    this.isLoading = false;
                 });
         }
     }
@@ -27,6 +30,7 @@ export class FormEmployeeComponent implements OnInit {
     }
 
     saveData() {
+        this.isLoading = true;
         var employeeData: EmployeeData = {
             id: this.employee.id,
             name: this.employee.employee_name,
@@ -37,16 +41,20 @@ export class FormEmployeeComponent implements OnInit {
             this.apiService.updateEmployee(employeeData)
                 .subscribe(() => {
                     alert("Empleado editado exitosamente!");
+                    this.isLoading = false;
                 }, error => {
                     console.log("error", error);
+                    this.isLoading = false;
                 });
         } else {
             this.apiService.createEmployee(employeeData)
                 .subscribe(() => {
                     alert("Nuevo empleado agregado exitosamente!");
+                    this.isLoading = false;
                     this.employee = {};
                 }, error => {
                     console.log("error", error);
+                    this.isLoading = false;
                 });;
         }
     }
